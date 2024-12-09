@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data_Aacces_Leyer
 {
-    public class Class1
+    public class configuracion
     {
     }
 }
