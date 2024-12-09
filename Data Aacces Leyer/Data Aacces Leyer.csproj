@@ -41,9 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_Camiones.cs" />
     <Compile Include="metodos_datos.cs" />
     <Compile Include="configuracion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\View Objects\View Objects.csproj">
+      <Project>{7b59bb9f-45c0-4a6d-a61b-11b995a10cd4}</Project>
+      <Name>View Objects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

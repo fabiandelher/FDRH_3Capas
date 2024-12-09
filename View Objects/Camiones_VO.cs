@@ -59,7 +59,7 @@ namespace View_Objects
         {
             _ID_Camion = int.Parse(dr["ID_Camion"].ToString());
             _Matricula = dr["Matricula"].ToString();
-            _Tipo_camion = dr["Tipo_Camion"].ToString();
+            _Tipo_camion = dr["Tipo_camion"].ToString();
             _Marca = dr["Marca"].ToString();
             _Capacidad = int.Parse(dr["Capacidad"].ToString());
             _Kilometraje = double.Parse(dr["Kilometraje"].ToString());

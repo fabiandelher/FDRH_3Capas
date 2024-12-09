@@ -41,8 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BLL_Camiones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data Aacces Leyer\Data Aacces Leyer.csproj">
+      <Project>{b14ce6a7-7938-4d8f-9d36-fb38308e2dd3}</Project>
+      <Name>Data Aacces Leyer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\View Objects\View Objects.csproj">
+      <Project>{7b59bb9f-45c0-4a6d-a61b-11b995a10cd4}</Project>
+      <Name>View Objects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
