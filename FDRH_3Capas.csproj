@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Catalogo\Camiones\listado_camiones.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -192,6 +193,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Catalogo\Camiones\listado_camiones.aspx.cs">
+      <DependentUpon>listado_camiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogo\Camiones\listado_camiones.aspx.designer.cs">
+      <DependentUpon>listado_camiones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -245,6 +253,20 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Bussines Logic Layer\Bussines Logic Layer.csproj">
+      <Project>{564d85ad-4692-48b7-afa6-6a9c10507c27}</Project>
+      <Name>Bussines Logic Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="Data Aacces Leyer\Data Aacces Leyer.csproj">
+      <Project>{b14ce6a7-7938-4d8f-9d36-fb38308e2dd3}</Project>
+      <Name>Data Aacces Leyer</Name>
+    </ProjectReference>
+    <ProjectReference Include="View Objects\View Objects.csproj">
+      <Project>{7b59bb9f-45c0-4a6d-a61b-11b995a10cd4}</Project>
+      <Name>View Objects</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
