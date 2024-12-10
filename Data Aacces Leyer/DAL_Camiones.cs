@@ -13,6 +13,39 @@ namespace Data_Aacces_Leyer
     public class DAL_Camiones
     {
         //Create 
+        public static string insertar_Camion(Camiones_VO camion)
+        {
+            string salida = "";
+            int respuesta = 0;
+            try
+            {
+                respuesta = metodos_datos.execute_nonQuery("sp_InsertarCamion",
+                    "@Matricula", camion.Matricula,
+                    "@Tipo_camion", camion.Tipo_camion,
+                    "@Marca", camion.Marca,
+                    "@Capacidad", camion.Capacidad,
+                    "@Kilometraje", camion.Kilometraje,
+                    "@UrlFoto", camion.UrlFoto,
+                    "@Disponibilidad", camion.Disponibilidad,
+                    );
+                if(respuesta !=0)
+                {
+                    salida = "Camión registrado con éxito!!!!!"
+                }
+                else
+                {
+                    salida = "Ha ocurrudo un Pedo :O";
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                //salida = "Error: " + e.Messege;
+                salida = $"Error: {e.Message}";
+            }
+            return salida;
+        }
         //Read 
         public static List<Camiones_VO> Get_Camniones(params object [] parametros)
         {
@@ -34,10 +67,66 @@ namespace Data_Aacces_Leyer
                 throw;
             }
         }
-            
-            //Update 
-            //Delete 
+
+        //Update 
+        public static string actualizar_Camion(Camiones_VO camion)
+        {
+            string salida = "";
+            int respuesta = 0;
+            try
+            {
+                respuesta = metodos_datos.execute_nonQuery("sp_UpdateCamion",
+                    "@Matricula", camion.Matricula,
+                    "@Tipo_camion", camion.Tipo_camion,
+                    "@Marca", camion.Marca,
+                    "@Capacidad", camion.Capacidad,
+                    "@Kilometraje", camion.Kilometraje,
+                    "@UrlFoto", camion.UrlFoto,
+                    "@Disponibilidad", camion.Disponibilidad,
+                    );
+                if (respuesta != 0)
+                {
+                    salida = "Camión actualizado con éxito!!!!!"
+                }
+                else
+                {
+                    salida = "Ha ocurrudo un Pedo :O";
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                //salida = "Error: " + e.Messege;
+                salida = $"Error: {e.Message}";
+            }
         }
+        //Delete 
+        public static string eliminar_Camion(int id)
+        {
+            string salida = "";
+            int respuesta = 0;
+            try
+            {
+                respuesta = metodos_datos.excute_nonQuery("sp_DeleteCamion",
+                    "@Id_camion", id
+                    );
+                if(respuesta != 0)
+                {
+                    salida = "Camión eliminado con éxito"
+                }
+                else
+                {
+                    salida = "Ha ocurrido un pedo :O";
+                }
+            }
+            catch (Exception e)
+            {
+                salida = $"Error: {e.Message}";
+            }
+            return salida;
+        }
+    }
         
         
             
