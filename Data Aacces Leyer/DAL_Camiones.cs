@@ -19,18 +19,18 @@ namespace Data_Aacces_Leyer
             int respuesta = 0;
             try
             {
-                respuesta = metodos_datos.execute_nonQuery("sp_InsertarCamion",
+                respuesta = metodos_datos.execute_nonQuery("SP_CreateCamion",
                     "@Matricula", camion.Matricula,
                     "@Tipo_camion", camion.Tipo_camion,
                     "@Marca", camion.Marca,
                     "@Capacidad", camion.Capacidad,
                     "@Kilometraje", camion.Kilometraje,
                     "@UrlFoto", camion.UrlFoto,
-                    "@Disponibilidad", camion.Disponibilidad,
+                    "@Disponibilidad", camion.Disponibilidad
                     );
                 if(respuesta !=0)
                 {
-                    salida = "Camión registrado con éxito!!!!!"
+                    salida = "Camión registrado con éxito!!!!!";
                 }
                 else
                 {
@@ -75,30 +75,33 @@ namespace Data_Aacces_Leyer
             int respuesta = 0;
             try
             {
-                respuesta = metodos_datos.execute_nonQuery("sp_UpdateCamion",
+                respuesta = metodos_datos.execute_nonQuery("SP_UpdateCamion",
+                    "@ID_Camion", camion.ID_Camion,
                     "@Matricula", camion.Matricula,
                     "@Tipo_camion", camion.Tipo_camion,
                     "@Marca", camion.Marca,
                     "@Capacidad", camion.Capacidad,
                     "@Kilometraje", camion.Kilometraje,
                     "@UrlFoto", camion.UrlFoto,
-                    "@Disponibilidad", camion.Disponibilidad,
+                    "@Disponibilidad", camion.Disponibilidad
                     );
                 if (respuesta != 0)
                 {
-                    salida = "Camión actualizado con éxito!!!!!"
+                    salida = "Camión actualizado con éxito!!!!!";
                 }
                 else
                 {
                     salida = "Ha ocurrudo un Pedo :O";
                 }
 
-
+                return salida;
             }
             catch (Exception e)
             {
-                //salida = "Error: " + e.Messege;
-                salida = $"Error: {e.Message}";
+                
+               //salida = "Error: " + e.Messege;
+  
+                return salida = $"Error: {e.Message}";
             }
         }
         //Delete 
@@ -113,7 +116,7 @@ namespace Data_Aacces_Leyer
                     );
                 if(respuesta != 0)
                 {
-                    salida = "Camión eliminado con éxito"
+                    salida = "Camión eliminado con éxito";
                 }
                 else
                 {

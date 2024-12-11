@@ -24,6 +24,7 @@ namespace View_Objects
         private double _Kilometraje;
         private string _UrlFoto;
         private bool _Disponibilidad;
+        //private string _Modelo;
 
         //Encapsulamiento
 
@@ -35,20 +36,22 @@ namespace View_Objects
         public double Kilometraje { get => _Kilometraje; set => _Kilometraje = value; }
         public string UrlFoto { get => _UrlFoto; set => _UrlFoto = value; }
         public bool Disponibilidad { get => _Disponibilidad; set => _Disponibilidad = value; }
+        //public string Modelo { get => _Modelo; set => _Modelo = value; }
 
         //Constructores 
 
         //Por defecto 
         public Camiones_VO()
-        { 
-        _ID_Camion = 0 ;
-        _Matricula= "";
-        _Tipo_camion = string.Empty ;
-        _Marca= "";
-        _Capacidad= 0;
-        _Kilometraje = 0;
-        _UrlFoto= "";
-        _Disponibilidad = true;
+        {
+            _ID_Camion = 0;
+            _Matricula = "";
+            _Tipo_camion = string.Empty;
+            _Marca = "";
+            _Capacidad = 0;
+            _Kilometraje = 0;
+            _UrlFoto = "";
+            _Disponibilidad = true;
+            //_Modelo = "";
         }
 
 
@@ -65,6 +68,8 @@ namespace View_Objects
             _Kilometraje = double.Parse(dr["Kilometraje"].ToString());
             _UrlFoto = dr["UrlFoto"].ToString();
             _Disponibilidad = bool.Parse(dr["Disponibilidad"].ToString());
+            //_Modelo = dr["Modelo"].ToString();
+
         }
 
     }

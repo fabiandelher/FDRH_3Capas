@@ -28,7 +28,7 @@ namespace FDRH_3Capas.Catalogo
 
         protected void Insertar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("formulariocamiones.aspx");
         }
 
         protected void GVCamiones_RowDeleting(object sender, GridViewDeleteEventArgs e)
@@ -38,7 +38,16 @@ namespace FDRH_3Capas.Catalogo
 
         protected void GVCamiones_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-
+            //Defino si el comando (el click que se detecta) tiene la propiedad "Select"
+            if(e.CommandName == "Select")
+            {
+                //recupero el indice en funcion de aquel elemento que haya detonado el evento
+                int varIndex = int.Parse(e.CommandArgument.ToString());
+                //recupero el id en funcion del indice que recuperamos anteriormente
+                string id = GVCamiones.DataKeys[varIndex].Values["ID_Camion"].ToString();
+                //redirecciono al formulario de edicion pasando como parametro el ID
+                Response.Redirect($"formulariocamiones.aspx?Id={id}");
+            }
         }
 
         protected void GVCamiones_RowEditing(object sender, GridViewEditEventArgs e)

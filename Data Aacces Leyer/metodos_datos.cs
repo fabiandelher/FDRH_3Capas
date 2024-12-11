@@ -53,7 +53,7 @@ namespace DataAccessLayer
                     else
                     {
                         //asignamos los parametros al comando
-                        for (int i = 0; i < parametros.Length; i++)
+                        for (int i = 0; i < parametros.Length; i=i+2)
                         {
                             cmd.Parameters.AddWithValue(parametros[i].ToString(), parametros[i + 1].ToString());
                         }
@@ -124,7 +124,7 @@ namespace DataAccessLayer
                     else
                     {
                         //asignamos los parametros al comando
-                        for (int i = 0; i < parametros.Length; i++)
+                        for (int i = 0; i < parametros.Length; i=i+2)
                         {
                             cmd.Parameters.AddWithValue(parametros[i].ToString(), parametros[i + 1].ToString());
                         }
@@ -198,7 +198,7 @@ namespace DataAccessLayer
                     else
                     {
                         //asignamos los parametros al comando
-                        for (int i = 0; i < parametros.Length; i++)
+                        for (int i = 0; i < parametros.Length; i=i+2)
                         {
                             cmd.Parameters.AddWithValue(parametros[i].ToString(), parametros[i + 1].ToString());
                         }
@@ -230,6 +230,10 @@ namespace DataAccessLayer
             }
         }
 
+        internal static int excute_nonQuery(string v1, string v2, int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
