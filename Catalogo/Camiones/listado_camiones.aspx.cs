@@ -33,7 +33,27 @@ namespace FDRH_3Capas.Catalogo
 
         protected void GVCamiones_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            //redupero el id del renglon afectado 
+            int id_camion = int.Parse(GVCamiones.DataKeys[e.RowIndex].Values["ID_Camion"].ToString());
+            //invoco mi metodo para eliminar mi camion
+            string respuesta = BLL_Camiones.eliminar_Camion(id_camion);
+            //preparamos el sweet alert
+            string titulo, msg, tipo;
+            if(respuesta.ToUpper().Contains("ERROR"))
+            {
+                titulo = "Error";
+                msg = respuesta;
+                tipo = "error";
+            }
+            else
+            {
+                titulo = "Correcto!";
+                msg = respuesta;
+                tipo = "succes";
+            }
+            //sweet alert 
+            //recargamos la página
+            cargarGrid();
         }
 
         protected void GVCamiones_RowCommand(object sender, GridViewCommandEventArgs e)

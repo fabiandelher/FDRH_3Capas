@@ -111,7 +111,7 @@ namespace Data_Aacces_Leyer
             int respuesta = 0;
             try
             {
-                respuesta = metodos_datos.excute_nonQuery("sp_DeleteCamion",
+                respuesta = metodos_datos.execute_nonQuery("SP_DeleteCamion",
                     "@Id_camion", id
                     );
                 if(respuesta != 0)

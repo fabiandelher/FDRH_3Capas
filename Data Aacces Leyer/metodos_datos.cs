@@ -230,10 +230,7 @@ namespace DataAccessLayer
             }
         }
 
-        internal static int excute_nonQuery(string v1, string v2, int id)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 
 
